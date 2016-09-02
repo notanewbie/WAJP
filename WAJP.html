@@ -39,7 +39,7 @@ function GotIt(response) {
 	MyWidget.skip(Math.floor((Math.random() * i) + 0));
 	alert(Object.keys(MyWidget).length)
 	alert("Properties of MyWidget: " + Object.getOwnPropertyNames(MyWidget))
-	MyWidget.bind(finish, MyWidget.skip(Math.floor((Math.random() * 100) + 1)))
+	MyWidget.bind(SC.Widget.Events.FINISH, MyWidget.skip(Math.floor((Math.random() * 100) + 1)))
 	
 }
 function LoadWidget() {
