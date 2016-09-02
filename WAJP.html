@@ -28,6 +28,7 @@ console.log("SC is " + Object.getOwnPropertyNames(window.SC))
 console.log("SC.Widget() has " + Object.getOwnPropertyNames(window.SC.Widget("lure")))
 setTimeout(LoadWidget, 10000)
 function GotIt(response) {
+	alert("GotIt is now running")
 	alert(response)
 	i = 0
 	for(key in response) {
@@ -35,8 +36,10 @@ function GotIt(response) {
 	}
 	alert(i)
 	i = i - 1
-	alert(Object.keys(response.length))
-	MyWidget.skip(Math.floor((Math.random() * 100) + 1));
+	MyWidget.skip(Math.floor((Math.random() * i) + 0));
+	alert(Object.keys(MyWidget).length)
+	alert("Properties of MyWidget: " + Object.getOwnPropertyNames(MyWidget))
+	MyWidget.bind(finish, MyWidget.skip(Math.floor((Math.random() * 100) + 1)))
 	
 }
 function LoadWidget() {
